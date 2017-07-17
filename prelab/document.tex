@@ -123,6 +123,7 @@
 	\phantom{ } We used the oscilloscope to get the waveforms of input voltage and output voltage, because the real relationship between them appears after the output voltage reached a steady stage. From figure[\ref{fig:801}], we can see that output waveform is a cosine wave while the input is a sine wave. Also, the ratio of the two waveform's amplitudes is a constant. Thus, we confirm that the circuit functions as an integrator.
 	\section{\textbf{Prelab\#9}}
 	\subsection{the Matlab Bode Plot}
+	See figure[\ref{fig:901}].
 	\begin{figure}[!htbp]
 		\centering
 		\begin{framed}
@@ -132,7 +133,7 @@
 		\end{framed}
 	\end{figure}
 	\subsection{the SPICE Bode Plot}
-	
+	See figure[\ref{fig:902}].
 	\begin{figure}[!htbp]
 		\centering
 		\begin{framed}
@@ -142,7 +143,7 @@
 		\end{framed}
 	\end{figure}
 
-	\phantom{ } We can see that the two graph simulated by matlab and SPICE are very close. 
+	\phantom{ } We can see from figure[\ref{fig:901},\ref{fig:902}] that the two graphs simulated by matlab and SPICE are very close. 
 	\section{\textbf{Prelab\#10}}
 	\subsection{the frequency response}
 	\begin{eqnarray*}
@@ -153,6 +154,8 @@
 	\begin{eqnarray*}
 		\mathrm{gain} = |H(\mathbf{j}\omega)| = \frac{R_f}{\sqrt{(\omega C R_s R_f)^2 + R_s^2}}
 	\end{eqnarray*}
+
+	See figure[\ref{fig:1001}] for Matlab Bode plot.
 	\begin{figure}[!htbp]
 		\centering
 		\begin{framed}
@@ -163,26 +166,60 @@
 	\end{figure}
 	\section{\textbf{Prelab\#11}}
 	\subsection{explanation at low frequency}
-	When $ \omega \to 0 $, the part $ (\omega C R_S R_f)^2 $ in the square root in denominator of the expression of gain also approaches to 0, which implies that the gain of this circuit approaches to $ \frac{R_f}{R_s} $, which is the same as the gain of an amplifier with constant gain. Also, we can see from the circuit schematic that if we take the capacitor(behave like unconnected in low frequency) away, the whole circuit is the same as an inverting amplifier. In low frequency, both the gain and the phase of two graphs are close. But in high frequency, when the frequency is not close to $ 0\si{\hertz} $, the gain and frequency in this circuit falls while those in inverting amplifier stay the same. 
+	\phantom{ } When $ \omega \to 0 $, the part $ (\omega C R_S R_f)^2 $ in the square root in denominator of the expression of gain also approaches to 0, which implies that the gain of this circuit approaches to $ \frac{R_f}{R_s} $, which is the same as the gain of an amplifier with constant gain. Also, we can see from the circuit schematic that if we take the capacitor(behave like unconnected in low frequency) away, the whole circuit is the same as an inverting amplifier. In low frequency, both the gain and the phase of two graphs are close. But in high frequency, when the frequency is not close to $ 0\si{\hertz} $, the gain and frequency in this circuit falls while those in inverting amplifier stay the same. 
 	\subsection{explanation at high frequency}
-	When $ \omega \gg \frac{1}{R_fC} $, we can say that $ \omega CR_sR_f \gg R_s $, which means that the part $ R_s $ in the square root in the denominator of the expression of the gain can be ignored. So we can say when $ \omega \gg \frac{1}{R_fC} $, $ \mathrm{gain} \to \frac{1}{\omega CR_SR_f} $, which is the same as the gain if a simple integrator at high frequencies.
+	\phantom{ } When $ \omega \gg \frac{1}{R_fC} $, we can say that $ \omega CR_sR_f \gg R_s $, which means that the part $ R_s $ in the square root in the denominator of the expression of the gain can be ignored. So we can say when $ \omega \gg \frac{1}{R_fC} $, $ \mathrm{gain} \to \frac{1}{\omega CR_SR_f} $, which is the same as the gain if a simple integrator at high frequencies.
 	\subsection{the function of $ R_f $}
-	Without a shunt resistor $ R_f $, like the circuit in prelab\#9, the gain of the integrator will be very high at low frequencies, which may result in high noise amplification at low frequencies. Also, high gain (also known as drift) at low frequencies may exceed the limitation of the op-amp.
+	\phantom{ } Without a shunt resistor $ R_f $, like the circuit in prelab\#9, the gain of the integrator will be very high at low frequencies, which may result in high noise amplification at low frequencies. Also, high gain (also known as drift) at low frequencies may exceed the limitation of the op-amp.
 	\section{\textbf{Prelab\#12}}
+	\subsection{SPICE simulation}
+	We simulated the circuit and get the Bode Plot in figure[\ref{fig:1201}].\\
+	\begin{figure}[!htbp]
+		\centering
+		\begin{framed}
+			\includegraphics[width=\linewidth]{images/12_1.PNG}
+			\caption{the SPICE Bode Plot for prelab \#12}
+			\label{fig:1201}
+		\end{framed}
+	\end{figure}
+	\phantom{ } As the figure shows, if the input signal has a low frequency, the expected gain is 33.4393dB, and if the input signal has a high frequency, the expected gain will fall when the frequency goes higher.
+	\subsection{comment}
+	\phantom{ } This circuit have a stable and high gain at lower frequencies, so it is a low-pass filter. It has a more stable performance and is able to lower the noise as well as amplify the signal. However, non-inverting amplifiers and inverting amplifiers only provides a constant gain without selectivity, which means that they cannot lower noise. So this circuit is a better choice for preamplifier( the first amplifier in a signal processing procedure).
 	\section{\textbf{Prelab\#13}}
 	\begin{eqnarray*}
 		\frac{V_{in}}{\frac{1}{\mathbf{j}\omega C}} & + & \frac{V_{out}}{R_f}  =  0\\
 		H(\mathbf{j}\omega) & = & \frac{V_{out}}{V_{in}}  =  -\mathbf{j}\omega CR_f
 	\end{eqnarray*}
+	\phantom{ } We can see that if we do Laplace inverse transformation on $ -\mathbf{j}\omega CR_f $, we can get a differentiation expression $ -CR_f\frac{\mathrm{d}}{\mathrm{d}t} $, which implies that this circuit functions as a differentiator.
 	\section{\textbf{Prelab\#14}}
+	\begin{figure}[!htbp]
+		\centering
+		\begin{framed}
+			\includegraphics[width=\linewidth]{images/14_1.PNG}
+			\caption{the SPICE waveforms Plot for prelab \#14}
+			\label{fig:1401}
+		\end{framed}
+	\end{figure}
+	\phantom{ } We can see from figure[\ref{fig:1401}], where input signal is channel A, and output signal is channel B, that the two waveforms have a phase difference of 90 degrees and have a shape close to sine waves. Also, the ratio of the two waveforms' amplitudes stays the same. These features imply the function of the circuit as a differentiator.
 	\section{\textbf{Prelab\#15}}
 	\subsection{the Matlab Bode Plot}
+	See figure[\ref{fig:1501}].
 	\begin{figure}[!htbp]
 		\centering
 		\begin{framed}
 			\includegraphics[width=\linewidth]{images/15.png}
 			\caption{the Matlab Bode Plot for prelab \#15}
 			\label{fig:1501}
+		\end{framed}
+	\end{figure}
+	\subsection{the SPICE Bode Plot}
+	See figure[\ref{fig:1502}].
+	\begin{figure}[!htbp]
+		\centering
+		\begin{framed}
+			\includegraphics[width=\linewidth]{images/15_1.PNG}
+			\caption{the SPICE Bode Plot for prelab \#15}
+			\label{fig:1502}
 		\end{framed}
 	\end{figure}
 \end{document}
