@@ -1,5 +1,5 @@
 \textbf{Analyze \#1:} \newline
-\phantom{ } We built the circuit according to the lab instruction, and recorded the following data.
+\phantom{ } We built the circuit according to the lab instruction, and recorded the following data.\\
 \begin{table}[!htbp]
 	\centering
 	\caption{Amplitude and phase change of output signal of preamplifier}
@@ -26,7 +26,7 @@
 	\centering 
 	\begin{framed}
 		\includegraphics[width=\linewidth]{images/1_1.PNG} 
-		\caption{Bode plot of preamplifier}
+		\caption{Bode plot of preamplifier(y:gain(dB),x:frequency(Hz))}
 		\label{fig:101} 
 	\end{framed}
 \end{figure} 
@@ -35,7 +35,7 @@
 	\centering 
 	\begin{framed}
 		\includegraphics[width=\linewidth]{images/1_2.PNG} 
-		\caption{Bode plot of preamplifier}
+		\caption{Bode plot of preamplifier(y:phase,x:frequency(Hz))}
 		\label{fig:102} 
 	\end{framed}
 \end{figure}
@@ -80,7 +80,7 @@
 	\centering 
 	\begin{framed}
 		\includegraphics[width=\linewidth]{images/1_3.PNG} 
-		\caption{Bode plot of preamplifier}
+		\caption{Bode plot of preamplifier(50$ \si{\kilo\Omega} $)(y:gain(dB),x:frequency(Hz))}
 		\label{fig:104} 
 	\end{framed}
 \end{figure} 
@@ -89,7 +89,7 @@
 	\centering 
 	\begin{framed}
 		\includegraphics[width=\linewidth]{images/1_4.PNG} 
-		\caption{Bode plot of preamplifier}
+		\caption{Bode plot of preamplifier(50$ \si{\kilo\Omega} $)(y:phase,x:frequency(Hz))}
 		\label{fig:105} 
 	\end{framed}
 \end{figure}
@@ -125,7 +125,7 @@
 	\centering 
 	\begin{framed}
 		\includegraphics[width=\linewidth]{images/1_5.PNG} 
-		\caption{Bode plot of preamplifier}
+		\caption{Bode plot of summing amplifier(y:gain(dB),x:frequency(Hz))}
 		\label{fig:106} 
 	\end{framed}
 \end{figure} 
@@ -134,7 +134,7 @@
 	\centering 
 	\begin{framed}
 		\includegraphics[width=\linewidth]{images/1_6.PNG} 
-		\caption{Bode plot of preamplifier}
+		\caption{Bode plot of summing amplifier(y:phase,x:frequency(Hz))}
 		\label{fig:107} 
 	\end{framed}
 \end{figure}
@@ -152,7 +152,7 @@
 \end{figure} 
 
 \textbf{Analyze \#4:} \newline
-\phantom{ } The output becomes distorted because the output amplitude reaches the resource voltage $ R_s $. The output amplitude cannot goes higher than $ R_s $, so the output waveform is flat on top and bottom. To support this reason, we recorded the following data.
+\phantom{ } The output becomes distorted because the output amplitude reaches the resource voltage $ R_s $. The output amplitude cannot goes higher than $ R_s $, so the output waveform is flat on top and bottom. To support this reason, we recorded the following data. From table[\ref{tab:distort}], we can see that the maximum and minimum value of the output signal and $ V_{CC} $, $ V_{EE} $ are in direct proportion.
 \begin{table}[!htbp]
 	\centering
 	\caption{The highest and lowest amplitude of output signal}
@@ -171,5 +171,5 @@
 	\label{tab:distort}
 \end{table}
 
-
-
+\textbf{Analyze \#5:} \newline
+\phantom{ } We applied a low frequency to $ V_1 $ and connect $ V_{out} $ to the speaker. We noticed that this low-frequency sound had a bigger volume when the capacitor is removed from the circuit. The function of the capacitor is to keep the low-frequency signals to a low gain, thus making the amplifier a high-pass filter.
